@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] -  Crecer</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="content-language" content="es-SV">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <!-- Estilos-->
+    <link rel="stylesheet" href="https://enlinea.crecer.com.sv/lib/material-design-lite/material.min.css">
+    <link rel="stylesheet" href="https://enlinea.crecer.com.sv/lib/dialog-polyfill/dialog-polyfill.css">
+    <link rel="stylesheet" href="https://enlinea.crecer.com.sv/css/mdl-selectfield.min.css">
+    <link rel="stylesheet" href="https://enlinea.crecer.com.sv/css/getmdl-select.css">
+    <link rel="stylesheet" href="https://enlinea.crecer.com.sv//css/style.css">
+    <link rel="stylesheet" href="https://enlinea.crecer.com.sv/css/customizations.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://enlinea.crecer.com.sv/afpfavicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://enlinea.crecer.com.sv/afpfavicon.ico" type="image/x-icon">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+</head>
+<body>
+    <header class="cl-white mdl-layout__header mdl-layout__header--waterfall">
+        <div class="cl-center">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title"> <a href="/"><img src="https://enlinea.crecer.com.sv/images/AFP_Crecer_logo.png" alt="AFP Crecer"></a> </span>
+                <span class="cl-primary cl-description mdl-layout-title">
+                    <h4>Crecer en Línea</h4>
+                </span>
+                <div class="mdl-layout-spacer"></div>
+                <!-- navegación superior-->
+                <nav>
+                    <partial name="_LoginPartial" />
+                    @*<a href="https://www.crecer.com.sv" class="nav-link-superior mdl-navigation ">Volver al sitio de AFP Crecer</a>*@
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <partial name="_CookieConsentPartial" />
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2021 Crecer</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
